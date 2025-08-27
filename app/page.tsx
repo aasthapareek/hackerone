@@ -1,7 +1,6 @@
-export default function HomePage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <h1 className="text-4xl font-bold text-foreground">hackerone</h1>
-    </div>
-  )
-}
+const res = await fetch("https://sts.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15", {
+  method: "POST",
+  headers: { "X-Amz-Security-Token": sessionToken },
+});
+const data = await res.text();
+console.log(data);
